@@ -9,9 +9,10 @@ before_action :authenticate_user! , only: [:new, :create, :edit, :update, :destr
    @group = Group.new
  end
 
-  def show
-    @group = Group.find(params[:id])
-  end
+ def show
+   @group = Group.find(params[:id])
+   @posts = @group.posts
+ end
 
   def edit
 end
